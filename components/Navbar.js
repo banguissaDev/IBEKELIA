@@ -32,10 +32,7 @@ export default function Navbar() {
         ))}
       </ul>
 
-      <a className="navbar__cta" href="#reservation" id="nav-reserve-btn">
-        Réserver
-      </a>
-
+      
       <button
         type="button"
         className="navbar__hamburger"
