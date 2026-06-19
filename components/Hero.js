@@ -41,9 +41,6 @@ export default function Hero() {
       </div>
 
       <div className="hero__content">
-        <p className="hero__eyebrow">
-          <Anchor size={16} /> Navigation fluviale · Port-Gentil · Lambaréné · Gabon
-        </p>
 
         <h1 className="hero__title">
           Découvrez les horizons du Gabon <em>par les eaux</em>
@@ -75,10 +72,6 @@ export default function Hero() {
       <div className="hero__scroll">
         <span className="hero__scroll-text">Défiler</span>
         <div className="hero__scroll-line" />
-      </div>
-
-      <div className="hero__brand">
-        <span className="hero__brand-text">IBEKELIA</span>
       </div>
     </section>
   );

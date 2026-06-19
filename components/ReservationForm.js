@@ -8,8 +8,8 @@ const ROUTES = [
 ];
 
 const CLASSES = [
-  { value: 'standard', label: 'Standard - 18 000 XAF' },
-  { value: 'premium', label: 'Premium - 25 000 XAF' },
+  { value: 'eco', label: 'Place Éco - 18 000 XAF' },
+  { value: 'vip', label: 'Place VIP - 23 000 XAF' },
 ];
 
 export default function ReservationForm() {
@@ -24,7 +24,7 @@ export default function ReservationForm() {
     route: 'pg-lam',
     date: '',
     passagers: '1',
-    classe: 'standard',
+    classe: 'eco',
   });
 
   const handleChange = (e) => {

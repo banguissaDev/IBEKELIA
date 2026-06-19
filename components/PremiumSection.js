@@ -19,20 +19,20 @@ export default function PremiumSection() {
   return (
     <section className="premium">
       <div className="container">
-        <div ref={headerRef} className={`premium__headers${headerVisible ? ' visible' : ''}`}>
-          <div className="premium__row reveal reveal-up">
-            <h3 className="premium__row-title">Confort, sécurité et rapidité sur le fleuve</h3>
+        <div ref={headerRef} className="premium__headers">
+          <div className={`premium__row reveal reveal-up${headerVisible ? ' visible' : ''}`}>
+            <h3 className="premium__row-title">Une navigation fiable sur l&apos;Ogooué</h3>
             <p className="premium__row-desc">
-              Nous assurons des liaisons quotidiennes et fiables toute l&apos;année entre Port-Gentil et Lambaréné,
-              avec une traversée pensée pour le confort, la sécurité et la rapidité.
+              Départs quotidiens garantis toute l&apos;année, horaires respectés et équipages certifiés :
+              Ibekelia est le partenaire de confiance pour vos déplacements sur le fleuve.
             </p>
           </div>
 
-          <div className="premium__row reveal reveal-up delay-2">
-            <h3 className="premium__row-title">Voyage premium et serein</h3>
+          <div className={`premium__row reveal reveal-up delay-2${headerVisible ? ' visible' : ''}`}>
+            <h3 className="premium__row-title">Le passager au centre de tout</h3>
             <p className="premium__row-desc">
-              Profitez d&apos;une traversée confortable avec cabines climatisées, restauration à bord,
-              Wi-Fi haut débit et un service bagages de qualité pour voyager en toute sérénité.
+              Chaque détail est pensé pour vous — de l&apos;accueil à l&apos;embarquement jusqu&apos;à l&apos;arrivée
+              à destination. Un service humain, attentif et disponible à chaque étape du voyage.
             </p>
           </div>
         </div>
