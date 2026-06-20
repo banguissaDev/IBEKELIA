@@ -12,15 +12,6 @@ export default function FeaturedSection() {
   return (
     <section className="featured" id="flotte">
       <div className="container">
-        <div
-          ref={topRef}
-          className={`featured__top reveal reveal-fade${topVisible ? ' visible' : ''}`}
-        >
-          <span className="eyebrow eyebrow--muted">Notre flotte</span>
-          <a href="#flotte" className="featured__view-all">
-            Voir tout <span>→</span>
-          </a>
-        </div>
 
         <h2
           ref={titleRef}

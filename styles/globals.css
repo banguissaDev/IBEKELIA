@@ -3,6 +3,13 @@
    Navigation Port-Gentil · Lambaréné · Gabon
    ============================================ */
 
+@font-face {
+  font-family: 'Bookman Old Style';
+  src: url('/fonts/BookmanOldStyle-Italic.woff2') format('woff2');
+  font-style: italic;
+  font-weight: 400;
+}
+
 /* ============================================
    CUSTOM PROPERTIES
    ============================================ */
@@ -25,6 +32,7 @@
 
   --font-display: 'Playfair Display', Georgia, serif;
   --font-brand: 'Inter', 'Segoe UI', sans-serif;
+  --font-logo: 'Bookman Old Style', serif;
   --font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
 
   --section-py: 116px;
@@ -234,20 +242,28 @@ section {
 }
 
 .navbar.scrolled {
-  background: rgba(10, 31, 28, 0.96);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   padding: 18px var(--gutter);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow: none;
 }
 
 .navbar__logo {
-  font-family: var(--font-brand);
+  font-family: var(--font-logo);
+  font-style: italic;
   font-size: 1.9rem;
   color: var(--white);
   letter-spacing: 0.06em;
   cursor: pointer;
   line-height: 1;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.navbar.scrolled .navbar__logo {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .navbar__logo span {
@@ -314,6 +330,8 @@ section {
   gap: 5px;
   cursor: pointer;
   padding: 4px;
+  position: relative;
+  z-index: 1000;
 }
 
 .navbar__hamburger span {
@@ -629,7 +647,7 @@ section {
    FEATURED SECTION — NOUVEAUX HORIZONS
    ============================================ */
 .featured {
-  padding: 90px 0 0;
+  padding: 32px 0 0;
   background: var(--white);
 }
 
@@ -1325,18 +1343,29 @@ section {
 
 .newsletter__form {
   display: flex;
+  align-items: center;
   max-width: 500px;
   margin: 0 auto;
+  gap: 0;
+}
+
+.newsletter__input,
+.newsletter__btn {
+  height: 52px !important;
+  min-height: 52px !important;
+  max-height: 52px !important;
+  box-sizing: border-box;
 }
 
 .newsletter__input {
   flex: 1;
-  padding: 17px 24px;
+  padding: 0 24px;
   font-family: var(--font-body);
   font-size: 0.9rem;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.28);
   border-right: none;
+  border-radius: 999px 0 0 999px;
   color: var(--white);
   outline: none;
   transition: background 0.3s;
@@ -1351,19 +1380,27 @@ section {
 }
 
 .newsletter__btn {
-  padding: 17px 34px;
+  padding: 0 34px;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   background: var(--gold);
-  color: var(--dark);
+  color: var(--white);
   border: 1px solid var(--gold);
+  border-radius: 0 999px 999px 0;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   transition: background 0.3s, color 0.3s;
 }
 
 .newsletter__btn:hover {
   background: var(--white);
+  color: var(--dark);
   border-color: var(--white);
 }
 
@@ -1408,7 +1445,8 @@ section {
 }
 
 .footer__big-brand {
-  font-family: var(--font-brand);
+  font-family: var(--font-logo);
+  font-style: italic;
   font-size: clamp(3rem, 6vw, 6rem);
   line-height: 1;
   color: rgba(255, 255, 255, 0.08);
@@ -1427,7 +1465,8 @@ section {
 }
 
 .footer__logo {
-  font-family: var(--font-brand);
+  font-family: var(--font-logo);
+  font-style: italic;
   font-size: 2.4rem;
   letter-spacing: 0.05em;
   margin-bottom: 14px;
@@ -2047,11 +2086,18 @@ section {
 
   .newsletter__form {
     flex-direction: column;
+    gap: 12px;
   }
 
   .newsletter__input {
     border-right: 1px solid rgba(255, 255, 255, 0.28);
-    border-bottom: none;
+    border-radius: 999px;
+    width: 100%;
+  }
+
+  .newsletter__btn {
+    border-radius: 999px;
+    width: 100%;
   }
 
   .footer__grid {
@@ -2317,19 +2363,14 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 9px 16px;
-  border-radius: 999px;
-  background: rgba(15, 95, 149, 0.08);
   color: var(--teal);
 }
 
 .eyebrow--gold {
-  background: rgba(197, 154, 91, 0.12);
   color: var(--gold);
 }
 
 .eyebrow--muted {
-  background: rgba(16, 20, 25, 0.06);
   color: var(--text-muted);
 }
 
@@ -2364,7 +2405,6 @@ textarea:focus-visible {
 .btn-primary,
 .btn-outline,
 .reservation__submit,
-.newsletter__btn,
 .routes__cta-link {
   display: inline-flex;
   align-items: center;
@@ -2376,8 +2416,7 @@ textarea:focus-visible {
 
 .navbar__cta,
 .btn-primary,
-.reservation__submit,
-.newsletter__btn {
+.reservation__submit {
   box-shadow: 0 12px 28px rgba(15, 95, 149, 0.18);
 }
 
@@ -2385,6 +2424,7 @@ textarea:focus-visible {
 .routes__cta-link {
   border: 1px solid rgba(16, 20, 25, 0.14);
   background: rgba(255, 255, 255, 0.74);
+  padding: 0 36px;
 }
 
 .navbar__hamburger {
@@ -2571,14 +2611,11 @@ textarea:focus-visible {
 }
 
 .reservation__field input,
-.reservation__field select,
-.newsletter__input {
+.reservation__field select {
   border-radius: 18px;
 }
 
-.newsletter__form {
-  gap: 0;
-}
+/* newsletter overrides consolidated above */
 
 .newsletter__content {
   background: linear-gradient(180deg, rgba(8, 26, 24, 0.76), rgba(8, 26, 24, 0.62));
@@ -2644,8 +2681,6 @@ textarea:focus-visible {
 }
 
 .newsletter__btn {
-  margin-top: 20px;
-
   border-radius: 0 999px 999px 0;
 }
 
@@ -2673,11 +2708,17 @@ textarea:focus-visible {
 
   .newsletter__form {
     flex-direction: column;
+    gap: 12px;
   }
 
   .newsletter__input,
   .newsletter__btn {
-    border-radius: 18px;
+    border-radius: 999px !important;
+    width: 100%;
+  }
+
+  .newsletter__input {
+    border-right: 1px solid rgba(255, 255, 255, 0.28) !important;
   }
 }
 

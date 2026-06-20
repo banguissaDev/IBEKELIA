@@ -63,8 +63,9 @@ export default function Navbar() {
         .navbar__mobile-menu {
           position: fixed;
           inset: 0;
-          background: rgba(10, 31, 28, 0.97);
-          backdrop-filter: blur(20px);
+          background: rgba(29, 108, 245, 0.95);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
           z-index: 999;
           display: flex;
           flex-direction: column;
